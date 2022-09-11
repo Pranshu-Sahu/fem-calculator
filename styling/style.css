@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&family=League+Spartan:wght@700&display=swap");
+:root {
+  --body-bg:hsl(222, 26%, 31%);
+  --keypad-bg:hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --top-txt: rgb(255, 255, 255);
+  --keyboard-bg:hsl(6, 63%, 50%);
+  --key-txt:rgb(68, 75, 90);
+  --key-bg: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --key1-bg: hsl(225, 21%, 49%);
+  --key1-shadow: hsl(224, 28%, 35%);
+  --key2-bg: hsl(6, 63%, 50%);
+  --key2-shadow:hsl(6, 70%, 34%);
+  --btn-txt:hsl(224, 36%, 15%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Karla";
+  background-color: var(--body-bg);
+}
+
+.container {
+  width: min(400px, 100%);
+  padding: 0.5em 1em;
+}
+
+.top {
+  color: var(--top-txt);
+  display: grid;
+  grid-template-columns: 50px auto 65px 60px;
+  grid-template-areas: ". . . a" "b . c d";
+}
+.top .item4 {
+  grid-area: a;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1px;
+}
+.top .item1 {
+  grid-area: b;
+  letter-spacing: 2px;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+.top .item2 {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  grid-area: c;
+}
+.top .item3 {
+  grid-area: d;
+}
+.top .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 18px;
+  border-radius: 10px;
+  background: var(--keypad-bg);
+  outline: none;
+  cursor: pointer;
+}
+.top .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--key2-bg);
+  cursor: pointer;
+}
+.top .slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--key2-bg);
+  cursor: pointer;
+}
+
+.middle {
+  width: 100%;
+}
+.middle .screen {
+  color: var(--top-txt);
+  background-color: var(--screen-bg);
+  text-align: right;
+  font-size: 1.5rem;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  height: 85px;
+}
+.middle .keypad {
+  background-color: var(--keypad-bg);
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 40px;
+  gap: 13px;
+}
+.middle .btn {
+  cursor: pointer;
+  background-color: var(--key-bg);
+  color: var(--btn-txt);
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 1px 4px var(--key-shadow);
+}
+.middle .btn:active {
+  transform: translateY(5px);
+  box-shadow: 0 1px var(--key-shadow);
+}
+.middle .btn#del, .middle .btn#reset {
+  color: #fff;
+  background-color: var(--key1-bg);
+  box-shadow: 1px 4px var(--key1-shadow);
+}
+.middle .btn#equal {
+  background-color: var(--key2-bg);
+  box-shadow: 1px 4px var(--key2-shadow);
+}
+.middle .btn--wide {
+  grid-column: span 2;
+}
+
+.attribution {
+  background-color: #ACC8E5;
+  color: #112A46;
+  display: inline-block;
+  padding: 2px;
+  margin-top: 2rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+.attribution a:nth-of-type(2) {
+  font-size: 1.5em;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+}/*# sourceMappingURL=style.css.map */

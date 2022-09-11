@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styling/style.css">
+  <title>Frontend Mentor | Calculator app</title>
+
+</head>
+<body>
+  <div class="container">
+    <!-- top section for toggling theme -->
+    <section class="top">
+    <p class="item1">calc</p>
+    <p class="item2">theme</p>
+    <input type="range" class="slider item3"
+     id="slider" min="1" max="3" step="1" value="1">
+    <label for="slider" class="item4">
+      <span>1</span><span>2</span><span>3</span>
+    </label>
+    </section>
+    
+    <main class="middle">
+    <div class="screen" id='screen'>0</div>
+    <div class="keypad">
+    <button class="btn key key8" data-val='8'>8</button>
+    <button class="btn key key7" data-val='7'>7</button>
+    <button class="btn key key9" data-val='9'>9</button>
+    <button class="btn key10" id='del'>del</button>
+    <button class="btn key key5" data-val='5'>5</button>
+    <button class="btn key key4" data-val='4'>4</button>
+    <button class="btn key key6" data-val='6'>6</button>
+    <button class="btn key key11" data-val='+'> + </button>
+    <button class="btn key key1" data-val='1'>1</button>
+    <button class="btn key key2" data-val='2'>2</button>
+    <button class="btn key key3" data-val='3'>3</button>
+    <button class="btn key key12" data-val='-'>-</button>
+    <button class="btn key key13" data-val='.'>.</button>
+    <button class="btn key key0" data-val='0'>0</button>
+    <button class="btn key key14" data-val='/'>/</button>
+    <button class="btn key key15" data-val='*'>X</button>
+    <button class="btn key16 btn--wide" id='reset'>reset
+    </button>
+    <button class="btn key17 btn--wide" id='equal'>=</button>
+    </div>
+    </main>
+  </div>
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Pranshu Sahu</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
